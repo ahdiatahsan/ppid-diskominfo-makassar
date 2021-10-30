@@ -13,6 +13,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('user.home');
+        return view('user.index');
+    }
+
+    public function about()
+    {
+        return view('user.tentang');
     }
 }
