@@ -3,10 +3,14 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BerkalaController;
+use App\Http\Controllers\BerkalaPublicController;
 use App\Http\Controllers\SetiapsaatController;
+use App\Http\Controllers\SetiapsaatPublicController;
 use App\Http\Controllers\SertamertaController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\SertamertaPublicController;
 use App\Http\Controllers\InfografisController;
+use App\Http\Controllers\InfografisPublicController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes(['register' => false]);
@@ -17,8 +21,29 @@ Auth::routes(['register' => false]);
 |--------------------------------------------------------------------------
 */
 
+# [Public Index Route] 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+# [About Route]
+Route::get('/tentang', [HomeController::class, 'about'])->name('about');
+
+# [Public Berkala Route]
+Route::get('/berkala', [BerkalaPublicController::class, 'index'])->name('berkalapublic');
+Route::get('berkalapublic-datatable', [BerkalaPublicController::class, 'datatable'])->name('berkalapublic.datatable');
+Route::get('berkalapublic/{berkala}/download', [BerkalaPublicController::class, 'download'])->name('berkalapublic.download');
+
+# [Public Infografis Route]
+Route::get('/infografis', [InfografisPublicController::class, 'index'])->name('infografispublic');
+
+# [Public Serta Merta Route]
+Route::get('/sertamerta', [SertamertaPublicController::class, 'index'])->name('sertamertapublic');
+Route::get('sertamertapublic-datatable', [SertamertaPublicController::class, 'datatable'])->name('sertamertapublic.datatable');
+Route::get('sertamertapublic/{sertamerta}/download', [SertamertaPublicController::class, 'download'])->name('sertamertapublic.download');
+
+# [Public Setiap Saat Route]
+Route::get('/setiapsaat', [SetiapsaatPublicController::class, 'index'])->name('setiapsaatpublic');
+Route::get('setiapsaatpublic-datatable', [SetiapsaatPublicController::class, 'datatable'])->name('setiapsaatpublic.datatable');
+Route::get('setiapsaatpublic/{setiapsaat}/download', [SetiapsaatPublicController::class, 'download'])->name('setiapsaatpublic.download');
 
 /*
 |--------------------------------------------------------------------------
