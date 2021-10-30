@@ -22,13 +22,6 @@ class SetiapsaatController extends Controller
 
     public function datatable(Request $request)
     {
-        // if (!empty($request->filter_kategori)) {
-        //     $setiapsaat = setiapsaat::where('kategori', '=', $request->filter_tahap)->get();
-        // }
-        // else {
-        //     $setiapsaat = setiapsaat::all();
-        // }
-
         if ($request->ajax()) {
             $setiapsaat = setiapsaat::all();
             return DataTables::of($setiapsaat)
