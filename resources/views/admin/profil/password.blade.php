@@ -51,25 +51,17 @@
                 <div class="kt-widget kt-widget--user-profile-1">
                     <div class="kt-widget__head">
                         <div class="kt-widget__media">
-                            @if (Storage::exists('public/user/' . Auth::user()->foto))
-                            <img class="" alt="Pic" src="{{ Storage::url('public/user/' . Auth::user()->foto) }}"
-                                width="1000px" />
-                            @else
                             <img class="" alt="Pic" src="{{ asset('img/user.png') }}" />
-                            @endif
                         </div>
                         <div class="kt-widget__content">
                             <div class="kt-widget__section">
                                 <span class="kt-widget__username">
-                                    {{ Auth::user()->nama }}
+                                    {{ Auth::user()->name }}
                                     <i class="flaticon2-correct kt-font-success"></i>
                                 </span>
                                 <span class="kt-widget__subtitle">
-                                    {{ Auth::user()->jabatans->nama }}
+                                    Admin PPID Diskominfo Kota Makassar
                                 </span>
-                            </div>
-                            <div class="kt-widget__action">
-                                <span class="btn btn-info btn-sm">KeDai Computerworks</span>
                             </div>
                         </div>
                     </div>
