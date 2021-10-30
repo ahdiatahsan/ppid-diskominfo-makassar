@@ -51,7 +51,7 @@
         <div class="table-responsive">
             <!--begin: Datatable -->
             <table class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline"
-                id="tabel_setiapsaat" role="grid" aria-describedby="table">
+                role="grid" aria-describedby="table">
                 <thead>
                     <tr>
                         <th>No.</th>
