@@ -97,7 +97,13 @@
                     className: 'text-center',
                     targets: [0,6],
                 },
-            ],
+                {
+                    targets: [5],
+                    data: 'link',
+                    render: function ( data, type, row, meta ) {
+                    return '<a href="'+data+'" target="blank">Menuju Link</a>';
+                },
+            }],
             pagingType: "numbers"
     });
 });
